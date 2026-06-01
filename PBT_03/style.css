@@ -1,0 +1,81 @@
+/* --- 1. Universal Selector --- */
+* { 
+    box-sizing: border-box; 
+}
+
+/* --- 2. Element Selector --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 3. ID Selector --- */
+#header {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+/* --- 4. Descendant Selector (Bộ chọn con cháu) --- */
+#header nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* --- 5. Pseudo-class Selector (Hover) --- */
+#header nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- 6. Class Selector (Trạng thái Active) --- */
+.active {
+    color: white !important;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* --- Table Styles --- */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Zebra striping (Dòng chẵn) */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover row */
+tr:hover {
+    background-color: #d1ecf1;
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: #222222;
+    color: #bbbbbb;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
