@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Test - Câu A2</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input { padding: 5px; width: 200px; }
+        button { padding: 8px 15px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Test HTML5 Validation Attributes</h2>
+    
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label>Trường hợp 1 (required):</label>
+            <input type="text" required value="">
+        </div>
+
+        <div class="form-group">
+            <label>Trường hợp 2 (type email):</label>
+            <input type="email" value="abc">
+        </div>
+
+        <div class="form-group">
+            <label>Trường hợp 3 (min/max number):</label>
+            <input type="number" min="1" max="10" value="15">
+        </div>
+
+        <div class="form-group">
+            <label>Trường hợp 4 (pattern):</label>
+            <input type="text" pattern="[0-9]{10}" value="abc123">
+        </div>
+
+        <div class="form-group">
+            <label>Trường hợp 5 (minlength):</label>
+            <input type="password" minlength="8" value="123">
+        </div>
+
+        <button type="submit">Submit để kiểm tra</button>
+    </form>
+</body>
+</html>
