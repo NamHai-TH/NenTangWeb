@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán Đơn Hàng</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        tfoot { font-weight: bold; background-color: #e9ecef; }
+        .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; }
+        .form-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Thanh Toán - Xe Điện E-Bike Store</h1>
+
+    <div class="form-group">
+        <label for="search">Tìm kiếm sản phẩm khác:</label>
+        <input list="products" id="search" name="search" placeholder="Gõ tên xe...">
+        <datalist id="products">
+            <option value="VinFast Evo200">
+            <option value="VinFast Feliz S">
+            <option value="Yadea Oris">
+            <option value="Before All">
+        </datalist>
+    </div>
+
+    <form action="#" method="POST">
+        <div class="section">
+            <h2>1. Giỏ hàng của bạn</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>VinFast Evo200</td>
+                        <td>18,000,000đ</td>
+                        <td>1</td>
+                        <td>18,000,000đ</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Xe máy điện Yadea Oris</td>
+                        <td>15,500,000đ</td>
+                        <td>1</td>
+                        <td>15,500,000đ</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mũ bảo hiểm nửa đầu</td>
+                        <td>250,000đ</td>
+                        <td>2</td>
+                        <td>500,000đ</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: right;">Tổng cộng:</td>
+                        <td><output name="total">34,000,000đ</output></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="form-group">
+                <label>Điểm thẻ thành viên (VIP):</label>
+                <meter min="0" max="1000" low="300" high="700" optimum="900" value="850" title="850/1000 điểm"></meter>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Phương thức thanh toán</h2>
+            <div class="form-group">
+                <input type="radio" id="pay_cod" name="payment" value="cod" required>
+                <label for="pay_cod">Thanh toán khi nhận hàng (COD)</label><br>
+                <input type="radio" id="pay_bank" name="payment" value="bank">
+                <label for="pay_bank">Chuyển khoản ngân hàng</label><br>
+                <input type="radio" id="pay_wallet" name="payment" value="wallet">
+                <label for="pay_wallet">Ví điện tử (Momo/ZaloPay)</label>
+            </div>
+
+            <div class="form-group">
+                <label for="promo">Mã giảm giá:</label>
+                <input type="text" id="promo" name="promo" pattern="^SALE\d{4}$" placeholder="VD: SALE2026" title="Bắt đầu bằng chữ SALE và kèm theo 4 chữ số">
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Ghi chú đơn hàng:</label><br>
+                <textarea id="notes" name="notes" rows="3" cols="50" placeholder="Lưu ý khi giao hàng..."></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Hẹn lịch giao hàng</h2>
+            <div class="form-group">
+                <label for="delivery_date">Ngày giao mong muốn:</label>
+                <input type="date" id="delivery_date" name="delivery_date" min="2026-06-02" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="delivery_time">Khung giờ nhận:</label>
+                <select id="delivery_time" name="delivery_time" required>
+                    <option value="" disabled selected>Chọn khung giờ</option>
+                    <option value="morning">Sáng (8h - 12h)</option>
+                    <option value="afternoon">Chiều (14h - 18h)</option>
+                    <option value="evening">Tối (18h - 21h)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery_speed">Tốc độ vận chuyển (ngày):</label>
+                <input type="range" id="delivery_speed" name="delivery_speed" min="1" max="7" step="1" value="3">
+            </div>
+        </div>
+
+        <button type="submit" aria-label="Xác nhận đặt hàng" style="padding: 10px 20px; font-size: 16px; font-weight: bold; cursor: pointer;">ĐẶT HÀNG NGAY</button>
+    </form>
+</body>
+</html>
